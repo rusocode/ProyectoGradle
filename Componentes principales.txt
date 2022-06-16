@@ -1,0 +1,6 @@
+1. projects
+2. build scripts (build.gradle)
+3. tasks (ej: test y empaquetado)
+4. plugins (plugin de java para compilar, test y empaquetar)
+
+Para ejecutar una tarea: "gradlew <task-name>"
