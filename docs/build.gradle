@@ -1,0 +1,98 @@
+/* 
+ * #Gestion de dependencias
+ * Gradle permite administrar la ruta de clases de sus proyectos. Puede agregar archivos JAR, directorios u otros proyectos a la ruta de construccion de 
+ * su aplicacion. Tambien admite la descarga automatica de las dependencias de su biblioteca Java. Simplemente especifique la dependencia en su archivo 
+ * de compilacion de Gradle. Esto hace que Gradle descargue la biblioteca, incluidas sus dependencias transitorias durante la compilacion.
+ * 
+ * Gradle identifica una biblioteca Java a traves de su proyecto groupId:artifactId:version (tambien conocido como GAV en Maven). Este GAV identifica de forma 
+ * unica una biblioteca en una determinada version. Puede utilizar el sitio web de Search Maven para buscar el GAV de una biblioteca en Maven Central.
+ */
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation group: "org.swinglabs.swingx", name: "swingx-autocomplete", version: "1.6.5-1" // Otra forma de agregar una dependencia
+    testCompile 'junit:junit:4.12'
+}
+
+/* 
+ * #Especificar los repositorios para buscar dependencias
+ * En su archivo de compilacion, especifica los repositorios remotos para buscar dependencias. Gradle admite repositorios Maven e Ivy para buscar 
+ * dependencias. La siguiente lista muestra como configurar Maven central como fuente de dependencia.
+ */
+
+repositories {
+    
+    mavenCentral()
+    
+    // Tambien es posible configurar el destino como una URL
+    maven {
+        url "http://repo.mycompany.com/maven2"
+    }
+
+	// Tambien puede agregar diferentes repositorios a la vez 
+    maven ("https://repository-achartengine.forge.cloudbees.com/snapshot/")
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
+
+    // Referencia a artefactos del sistema de archivos
+    mavenLocal()
+
+}
+
+/*
+ * - Una tarea es un objeto
+ * 		- Una tarea es una API
+ * 	- Una tarea es una lista de actividades
+ * 	- Un Gradle build es... un programa
+ */
+
+// Creacion de una tarea
+task A {
+	doLast {
+		println "Soy A"	// Imprime un mensaje	
+	}
+}
+
+task B { // (dependsOn: 'A') // Orta forma de depender de A
+	dependsOn A // La tarea B depende de la tarea A
+	doLast {
+		println 'Soy B'
+	}
+}
+
+// Otra forma de declarar una tarea
+task tarea_propiedades
+
+tarea_propiedades {
+
+	// Otra forma de crear una propiedad
+	ext.proyecto = "Mi proyecto!"
+
+	// Crea propiedades con sus valores
+	ext {
+		nombre = "Juan"
+		correo = "rusocode94@gmail.com"
+		version = "1.0"
+	}
+
+	// Ejecuta una tarea al final de todo
+	doLast {
+		println "Mi nombre es " + nombre
+	}
+}
+
+// Otra forma de ejecutar una tarea
+tarea_propiedades.doLast {
+
+	println "Ejecutando la compilacion de " + tarea_propiedades.proyecto
+
+    // Aprovechando codigo java
+	int edad = 26
+	String nombre = "Juan"
+	Date ahora = new Date()
+	println "Hola, " + nombre + " de " + edad + " años"
+
+	println "Proyecto ejecutado a las " + ahora.toString()
+}

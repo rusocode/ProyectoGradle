@@ -5,7 +5,7 @@ package ProyectoGradle;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Rulo super quemado!";
     }
 
     public static void main(String[] args) {
