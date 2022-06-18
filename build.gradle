@@ -10,8 +10,8 @@ jar {
 }
 
 repositories {
-    mavenLocal() // Repositorio local de Maven - ~/.m2/repository
-    mavenCentral() // Repositorio remoto - https://mvnrepository.com/repos/central
+    mavenLocal() // ~/.m2/repository
+    mavenCentral() // https://mvnrepository.com/repos/central
 }
 
 dependencies {
