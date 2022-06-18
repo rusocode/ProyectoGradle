@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+// Agrega el atributo manifest de la clase principal para poder ejecutar el .jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.craivet.ProyectoGradle'
+    }
+}
+
+repositories {
+    mavenLocal() // Repositorio local de Maven - ~/.m2/repository
+    mavenCentral() // Repositorio remoto - https://mvnrepository.com/repos/central
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
