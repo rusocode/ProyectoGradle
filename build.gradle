@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java' // Plugin de java para trabajar con la JVM
 }
 
 // Agrega el atributo manifest de la clase principal para poder ejecutar el .jar
