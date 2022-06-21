@@ -1,5 +1,5 @@
 plugins {
-    id 'java' // gradlew build
+    id 'java' // Plugin de java para trabajar con la JVM
 }
 
 jar {
