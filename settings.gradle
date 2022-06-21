@@ -3,6 +3,6 @@
  * fijo, ya que la carpeta puede cambiar si se comparte el proyecto. */
 rootProject.name = 'ProyectoGradle'
 
-/* Define que la compilacion consta de un subproyecto/submodulo en la carpeta correspondiente. Se pueden 
- * agregar mas modulos agregandolos en la declaracion include(...). */
+/* Define que la compilacion consta de un subproyecto en la carpeta correspondiente. Se pueden 
+ * agregar mas modulos en la declaracion include(...). */
 // include 'sub-project-1', 'sub-project-2' // Si hubiera un modulo, entonces si van los parentesis

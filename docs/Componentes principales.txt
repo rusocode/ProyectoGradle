@@ -4,3 +4,45 @@
 4. plugins (plugin de java para compilar, test y empaquetar)
 
 Para ejecutar una tarea: "gradlew <task-name>"
+
+
+-En cuanto a las configuraciones, las principales de interes son:
+compileOnly - para dependencias que son necesarias para compilar su codigo de produccion 
+pero que no deberian ser parte del classpath en tiempo de ejecucion.
+
+implementation (reemplaza compile) - utilizado para compilacion y tiempo de ejecucion.
+
+runtimeOnly (reemplaza runtime) - solo se usa en tiempo de ejecucion, no para compilacion.
+
+testCompileOnly - igual que compileOnly excepto que es para las pruebas.
+
+testImplementation - prueba equivalente de implementation.
+
+testRuntimeOnly - prueba equivalente de runtimeOnly.
+
+NOTA: la configuracion 'compile' esta obsoleta.
+
+
+-Personalizacion de ubicaciones de archivos y directorios en build.gradle
+sourceSets {
+    main {
+         java {
+            srcDirs = ['src/java']
+         }
+    }
+
+    test {
+        java {
+            srcDirs = ['test/resources']
+        }
+    }
+}
+
+
+-Dirigirse a una version especifica de Java
+-> sourceCompatibility
+Define que version de idioma de Java deben tratarse sus archivos fuente.
+
+-> targetCompatibility
+Define la version minima de JVM en la que debe ejecutarse su codigo, es decir, 
+determina la version del codigo de bytes que genera el compilador.
