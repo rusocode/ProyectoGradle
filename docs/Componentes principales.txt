@@ -5,8 +5,11 @@
 
 Para ejecutar una tarea: "gradlew <task-name>"
 
+<<<<<<< HEAD
 El archivo de configuracion "gradle.properties" se crea manualmente. Aqui hay un enlace https://docs.gradle.org/current/userguide/build_environment.html
 
+=======
+>>>>>>> 411ce663d70a455792c9717e3c6fc35c1740aa38
 -En cuanto a las configuraciones, las principales de interes son:
 compileOnly - para dependencias que son necesarias para compilar su codigo de produccion 
 pero que no deberian ser parte del classpath en tiempo de ejecucion, por ejemplo lombok?
