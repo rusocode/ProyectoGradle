@@ -5,7 +5,6 @@
 
 Para ejecutar una tarea: "gradlew <task-name>"
 
-
 -En cuanto a las configuraciones, las principales de interes son:
 compileOnly - para dependencias que son necesarias para compilar su codigo de produccion 
 pero que no deberian ser parte del classpath en tiempo de ejecucion.
