@@ -1,6 +1,21 @@
 plugins {
-    id 'java' // Plugin de java para trabajar con la JVM
+    id 'java' // Plugin de java para trabajar con la JVM (complemento principal, no requiere version)
+    // id 'java-library' // Aplique el complemento java-library para API y separacion de implementacion
+    // id 'application' // ?
 }
+
+task runApp(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath // El classpath para ejecutar la clase principal
+  mainClass = 'com.craivet.ProyectoGradle' // El nombre completo de la clase principal que se va a ejecutar
+  args 'Rulo tostado' // Argumentos para pasar a la aplicacion
+}
+
+// Crea la tarea :run mas simplificado
+/* run {
+    classpath = sourceSets.main.runtimeClasspath // El classpath para ejecutar la clase principal
+    mainClass = 'com.craivet.Main' // El nombre completo de la clase principal que se va a ejecutar
+    args 'Rulo tostado' // Argumentos para pasar a la aplicacion
+} */
 
 jar {
     // Agrega el atributo manifest de la clase principal para poder ejecutar el .jar

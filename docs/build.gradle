@@ -67,10 +67,10 @@ task tarea_propiedades
 
 tarea_propiedades {
 
-	// Otra forma de crear una propiedad
+	// Propiedad adicional
 	ext.proyecto = "Mi proyecto!"
 
-	// Crea propiedades con sus valores
+	// Propiedades adicionales dentro del bloque ext
 	ext {
 		nombre = "Juan"
 		correo = "rusocode94@gmail.com"
