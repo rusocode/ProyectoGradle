@@ -13,13 +13,15 @@ task runApp(type: JavaExec) {
   args 'Rulo tostado' // Argumentos para pasar a la aplicacion
 }
 
-// Es necesario especificar la estructura de carpetas para los fuentes y recursos?
-// sourceSets.main.java.srcDirs = [ "src/main/java/" ]
-
+ /* Es necesario decirle a Gradle donde encontrar los archivos de origen en caso de que la estructura de carpetas 
+  * para el codigo de produccion y de prueba no sea la convencional. Esto se hace a traves de la configuracion del 
+  * conjunto de fuentes */
 /* sourceSets {
-    main.java.srcDirs = ["src/main/java/"]
-    main.resources.srcDirs = ["resources/"]
+    main.java.srcDirs = ['src']
+    test.java.srcDirs = ['test']
 } */
+// Otra forma de especificar sin el bloque sourceSets
+// sourceSets.main.java.srcDirs = ['src']
 
 // Crea la tarea :run mas simplificado
 /* run {
